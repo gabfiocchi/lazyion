@@ -1,0 +1,30 @@
+{
+  "name": "lazyion",
+  "version": "0.0.1",
+  "description": "Automatization of configs for ionic project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "lazyion": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabfiocchi/lazyion.git"
+  },
+  "keywords": [
+    "ionic",
+    "automatization",
+    "lazy"
+  ],
+  "author": "gabfiocchi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gabfiocchi/lazyion/issues"
+  },
+  "homepage": "https://github.com/gabfiocchi/lazyion#readme",
+  "dependencies": {
+    "commander": "^2.12.2"
+  }
+}
