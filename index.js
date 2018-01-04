@@ -7,13 +7,9 @@ const commander = require('commander');
 const packageJson = require('./package.json');
 
 
-commander.command('fullname').alias('f')
-    .description('Print Full Name')
-    .action(() => console.log(colors.red('Ionsic configuration file it does not exist.')))
-    commander.command('config', 'configuration one or more settings').alias('c');
 
-commander.command('sontact').alias('s')
-    .description('Print Contact Info')
-    .action(() => console.log('holaaa'));
+commander
+    .version(packageJson.version)
+    .description(packageJson.description);
 
-commander.parse(process.argv);
+console.log(colors.green('Hello!'))

@@ -2,19 +2,28 @@
 'use strict';
 
 const colors = require('colors');
-const program = require('commander');
+const cordova = require('../lib/cordova');
+const fs = require('fs');
+const commander = require('commander');
 
-program
+
+commander
     .option('-e, --enviroment <type>', 'Set enviroment', 'develop')
-    // .option('-f, --force', 'force installation')
     .parse(process.argv);
 
-// if (program.force) console.log('  force: install');
-
-// read enviroment
-if (program.enviroment) {
+try {
+    const ionConfigs = fs.readFileSync('ionic.config.json');
+    console.error(colors.green('Ionic configuration found it.'));
+}
+catch (err) {
+    console.error(colors.red('Ionic configuration file not found.'));
+    // si no existe el config, terminamos la ejecución.
+    process.exit(1);
+}
+//     // read enviroment
+if (commander.enviroment) {
     // llama a las configs para setear el ambiente, pasar a un archivo externo...
-    console.error(colors.red('Enviroment add.'));
+    cordova.config(commander.enviroment);
 } else {
     console.error(colors.red('Enviroment required.'));
 }
