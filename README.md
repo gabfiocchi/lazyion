@@ -15,3 +15,7 @@ npm i --save lazyion
 ```
 npm i -g lazyion
 ```
+
+## Dependencies:
+- [Commander](https://www.npmjs.com/package/commander)
+- [Colors](https://www.npmjs.com/package/colors)
